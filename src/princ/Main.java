@@ -29,8 +29,34 @@ public class Main {
 		br.close();	
 	}
 	private static String bubbleSort(double[] lineAL) {
+		 String out;
+	        double average = 0;
+	        double changesInif = 0;
+	        double changesInfor = 0;
+	        if(lineAL != null) {
+	            for(int i = 1; i < lineAL.length;i++) {
+	                changesInfor++;
+	                for(int j = 0; j < lineAL.length - i;j++) {
+	                    
+	                    if(lineAL[j]>lineAL[j+1]) {
+	                    double temp = lineAL[j];
+	                    lineAL[j] = lineAL[j+1];
+	                    lineAL[j+1] =temp;
+	                    changesInif++ ;
+	                    }
+	                    
+	                }
+	            }
+	            average = changesInif / changesInfor;
+	            average = Math.round(average*100.0)/100.0;
+	            
+	        }
+	        out = average+"-";
+	        for(int i = 0; i < lineAL.length; i++) {
+	            out += lineAL[i]+" ";
+	        }
 		
-		}
+		
 	
 		return null;
 	}
